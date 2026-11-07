@@ -1,6 +1,13 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+﻿/* ===================================================
+   Visit Lesotho - Interactive JavaScript Features
+   Written clearly for beginner understanding
+   =================================================== */
 
-  
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* --------------------------------------------------
+     FEATURE 1: Dark / Light Mode Toggle with LocalStorage
+     -------------------------------------------------- */
   const themeToggleBtn = document.getElementById("themeToggleBtn");
   const savedTheme = localStorage.getItem("theme");
 
@@ -19,7 +26,9 @@
     });
   }
 
-  
+  /* --------------------------------------------------
+     FEATURE 2: Destinations Search & Category Filter
+     -------------------------------------------------- */
   const searchInput = document.getElementById("searchInput");
   const filterBtns = document.querySelectorAll("#filterBtnGroup button");
   const destinationItems = document.querySelectorAll(".destination-item");
@@ -56,7 +65,9 @@
     });
   });
 
-  
+  /* --------------------------------------------------
+     FEATURE 3: Interactive Tour Cost Calculator
+     -------------------------------------------------- */
   
 const calcPackage = document.getElementById("calcPackage");
 const calcPeople = document.getElementById("calcPeople");
@@ -85,7 +96,9 @@ if (calcPackage) {
 }
 
 
-  
+  /* --------------------------------------------------
+     FEATURE 4: Gallery Lightbox Modal
+     -------------------------------------------------- */
   const galleryThumbs = document.querySelectorAll(".gallery-thumb");
   const lightboxModalElem = document.getElementById("lightboxModal");
   const lightboxImg = document.getElementById("lightboxImg");
@@ -127,7 +140,9 @@ if (calcPackage) {
     }
   }
 
-  
+  /* --------------------------------------------------
+     FEATURE 5: Form Validations & LocalStorage Booking
+     -------------------------------------------------- */
   const bookingForm = document.getElementById("bookingForm");
   const bookingAlert = document.getElementById("bookingAlert");
   const savedBookingBox = document.getElementById("savedBookingBox");
@@ -187,7 +202,7 @@ if (calcPackage) {
     });
   }
 
-  
+  // Form 2: General Contact Form
   const contactForm = document.getElementById("contactForm");
   const contactAlert = document.getElementById("contactAlert");
 
@@ -207,19 +222,22 @@ if (calcPackage) {
   }
 
 });
-
+/* =========================
+   FOOTER JAVASCRIPT
+========================= */
+// Automatically update the copyright year
 const currentYear = document.getElementById("currentYear");
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
-
+// Back to top button
 const backToTop = document.getElementById("backToTop");
 
 if (backToTop) {
 
-  
+  // Show or hide the button when scrolling
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
       backToTop.classList.add("show");
@@ -228,7 +246,7 @@ if (backToTop) {
     }
   });
 
-  
+  // Scroll smoothly to the top when clicked
   backToTop.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
@@ -246,32 +264,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0;
 
-  
+  // Calculates items per view based on Bootstrap breakpoints
   function getVisibleItemsCount() {
-    if (window.innerWidth >= 768) return 3; 
-    if (window.innerWidth >= 576) return 2; 
-    return 1;                               
+    if (window.innerWidth >= 768) return 3; // col-md-4 (3 per view)
+    if (window.innerWidth >= 576) return 2; // col-sm-6 (2 per view)
+    return 1;                                // mobile (1 per view)
   }
 
   function updateSlider() {
     const visibleItems = getVisibleItemsCount();
     const maxIndex = items.length - visibleItems;
 
-    
+    // Clamp current index within valid bounds
     if (currentIndex > maxIndex) currentIndex = maxIndex;
     if (currentIndex < 0) currentIndex = 0;
 
-    
+    // Calculate shift percentage
     const itemWidth = 100 / visibleItems;
     const shiftPercent = -(currentIndex * itemWidth);
     grid.style.transform = `translateX(${shiftPercent}%)`;
 
-   
+    // Disable buttons at boundaries
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
   }
 
-  
+  // Event Listeners for Next & Previous Controls
   nextBtn.addEventListener("click", () => {
     const visibleItems = getVisibleItemsCount();
     const maxIndex = items.length - visibleItems;
@@ -288,9 +306,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  
+  // Re-evaluate on window resize
   window.addEventListener("resize", updateSlider);
 
-  
+  // Initial setup
   updateSlider();
 });
