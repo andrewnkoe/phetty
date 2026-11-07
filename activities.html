@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities & Accommodation | Visit Lesotho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <img src="logo.webp" alt="Maloti Mountains" height=70 width=70>
+      <button id="themeToggleBtn" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Dark Mode</button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-brand fw-bold" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link active" href="activities.html">Activities & Stay</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact & Booking</a></li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="home1.webp" class="d-block w-100 hero-img" alt="Maloti Mountains">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Lesotho is place of love.</h1>
+            <p>Experience breathtaking mountain views, rich Basotho culture, and serene landscapes.</p>
+            <a href="destinations.html" class="btn btn-primary">Explore Destinations</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="water.jpg" class="d-block w-100 hero-img" alt="Maletsunyane Waterfalls">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Majestic Waterfalls</h1>
+            <p>Visit Maletsunyane Falls, one of Africa's highest single-drop waterfalls.</p>
+            <a href="activities.html" class="btn btn-primary">Discover Activities</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="culture1.jpg" class="d-block w-100 hero-img" alt="Basotho Culture">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Rich Cultural Heritage</h1>
+            <p>Wear the iconic Mokorotlo hat and ride traditional Basotho ponies.</p>
+            <a href="gallery.html" class="btn btn-primary">View Photo Gallery</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    
+    <section class="card shadow p-4 mb-5 border-0">
+      <h3 class="mb-3">Tour Cost Calculator(Estimation Cost)</h3>
+      <p class="text-muted">Estimate your trip cost instantly before making a booking.</p>
+
+      <form id="calcForm" class="row g-3">
+        <div class="col-md-4">
+          <label for="calcPackage" class="form-label">Select Package</label>
+          <select id="calcPackage" class="form-select">
+            <option value="50">Basic Mountain Hike (M50/day)</option>
+            <option value="100" selected>Pony Trekking & Waterfall Tour (M100/day)</option>
+            <option value="180">Full Luxury Safari & Lodge (M180/day)</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="calcPeople" class="form-label">Number of Travelers</label>
+          <input type="number" id="calcPeople" class="form-control" min="1" max="20" value="2">
+        </div>
+        <div class="col-md-4">
+          <label for="calcDays" class="form-label">Number of Days</label>
+          <input type="number" id="calcDays" class="form-control" min="1" max="30" value="3">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="calcAddon" value="30">
+            <label class="form-check-label" for="calcAddon">Include Equipment Rental (+M30/person)</label>
+          </div>
+        </div>
+      </form>
+
+      <div class="alert alert-info mt-3 mb-0 fs-5 fw-bold text-center">
+        Estimated Total Cost: <span id="calcTotal">M660</span>
+      </div>
+    </section>
+
+    
+    <section>
+      <h3 class="mb-4">Where to Stay in Lesotho</h3>
+      <div class="accordion" id="accAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Mmelesi Lodge Thaba-Bosiu
+           </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accAccordion">
+            <div class="accordion-body">
+              <strong>Mmelesi Lodge:</strong> 
+            Mmelesi Lodge in Maseru offers comfortable rooms with free WiFi, air-conditioning, 
+            and private bathrooms.Each room includes a tea and coffee maker, free toiletries, and a shower.
+            The lodge features a family-friendly restaurant with a traditional ambiance. Guests can 
+            enjoy African, local, barbecue grill, and South African cuisines. Breakfast options include continental, buffet, à la carte,
+            and full English/Irish.The lodge offers an outdoor seating area, garden, and free on-site private parking. 
+            Additional amenities include a bar, paid shuttle service, and luggage storage.
+            Mmelesi Lodge is 11 mi from Moshoeshoe International Airport.Couples in particular like the location,they rated it 9.0 for a two-person trip.
+            
+            </div>
+
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Traditional Village Homestays
+            </button>
+           
+
+
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accAccordion">
+            <div class="accordion-body">
+              <strong>Khutsong Lodge:</strong> Khutsong Lodge rests at the foothills of the historic Thaba-Bosiu Mountain, home of the founder of the Basotho nation 
+            Paramount Chief Moshoeshoe 1 and the final resting place of Lesotho’s Monarchs including King Moshoeshoe 2. The Lodge’s 
+            luxury coupled with the destination’s nature-based experiences makes Khutsong Lodge a preferred option for guests 
+            seeking culture and wilderness.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              City Hotels in Maseru
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accAccordion">
+            <div class="accordion-body">
+              <strong>Avani Lesotho Hotel & Casino: </strong>
+              Avani Lesotho Hotel & Casino offers guests panoramic views of the Maseru city center. It also features a spa, outdoor
+              swimming pool and casino, as well as several restaurants and bars. Set in a modern, sandstone building, the rooms 
+              and suites all come with air conditioning, a seating area and satellite TV. They are also equipped with tea-and-
+              coffee making facilities and a safety deposit box. The ensuite bathrooms include a hairdryer and free toiletries. 
+              Guests can enjoy buffet breakfasts, lunches and dinners at Nala Café, or enjoy a lite meal and a selection of cakes 
+              and coffee at The Pantry. Offering a fitness center and sauna. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <footer class="footer-section" id="footer">
+  <div class="container">
+    <div class="row g-4">
+           
+      <div class="col-lg-4 col-md-6">
+        <h3 class="footer-logo">Visit Lesotho</h3>
+        <p class="footer-description">
+          Explore beautiful mountains, experience Basotho culture, and create unforgettable memories
+          in the heart of Southern Africa.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a> 
+        </div>
+      </div>
+
+            
+      <div class="col-lg-2 col-md-6">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="activities.html">Activities & Stay</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Explore Lesotho</h5>
+        <ul class="footer-links">
+          <li><a href="destinations.html">Maletsunyane Falls</a></li>
+          <li><a href="destinations.html">Katse Dam</a></li>
+          <li><a href="destinations.html">Sani Pass</a></li>
+          <li><a href="destinations.html">Thaba Bosiu</a></li>
+          <li><a href="activities.html">Afriski Mountain Resort</a></li>
+        </ul>
+      </div>
+
+            
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Get In Touch</h5>
+        
+        <p class="footer-contact">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Kingdom of Lesotho, Southern Africa</span>
+        </p>
+
+        <p class="footer-contact">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="contact.html">Send us an enquiry</a>
+        </p>
+
+        <p class="footer-contact">
+          <i class="fa-solid fa-globe"></i>
+          <a href="index.html">Lesotho Tourism</a>
+        </p>
+
+        <a href="contact.html" class="footer-booking-btn">
+          Plan Your Trip →
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear">2026</span> Lesotho's tour places'. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
